@@ -1,11 +1,17 @@
-﻿namespace MathGame.Maui;
+﻿using MathGame.Maui.Data;
+
+namespace MathGame.Maui;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public static GameRepository GameRepository { get; private set; }
 
-		MainPage = new AppShell();
-	}
+    public App(GameRepository gameRepository)
+    {
+        InitializeComponent();
+
+        MainPage = new AppShell();
+
+        GameRepository = gameRepository;
+    }
 }
